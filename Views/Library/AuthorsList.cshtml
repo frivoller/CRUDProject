@@ -1,0 +1,30 @@
+﻿@model IEnumerable<AuthorViewModel>
+
+<h1>Authors List</h1>
+
+<table class="table table-striped">
+    <thead>
+        <tr>
+            <th>Full Name</th>
+            <th>Date of Birth</th>
+            <th>Books Written</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var author in Model)
+        {
+            <tr>
+                <td>@author.FullName</td>
+                <td>@author.DateOfBirth.ToString("MMMM dd, yyyy")</td>
+                <td>
+                    <ul>
+                        @foreach (var book in author.BooksWritten)
+                        {
+                            <li>@book</li>
+                        }
+                    </ul>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

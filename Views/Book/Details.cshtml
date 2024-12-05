@@ -1,0 +1,40 @@
+@model BookViewModel
+
+<div class="container mt-4">
+    <div class="details-container">
+        <h2 class="mb-4">Book Details</h2>
+        
+        <div class="row">
+            <div class="col-md-8">
+                <dl class="row">
+                    <dt class="col-sm-3">Title</dt>
+                    <dd class="col-sm-9">@Model.Title</dd>
+
+                    <dt class="col-sm-3">Author</dt>
+                    <dd class="col-sm-9">@Model.AuthorFullName</dd>
+
+                    <dt class="col-sm-3">Genre</dt>
+                    <dd class="col-sm-9">@Model.Genre</dd>
+
+                    <dt class="col-sm-3">Publish Date</dt>
+                    <dd class="col-sm-9">@Model.PublishDate.ToString("MMMM dd, yyyy")</dd>
+
+                    <dt class="col-sm-3">ISBN</dt>
+                    <dd class="col-sm-9">@Model.ISBN</dd>
+
+                    <dt class="col-sm-3">Copies Available</dt>
+                    <dd class="col-sm-9">@Model.CopiesAvailable</dd>
+                </dl>
+            </div>
+        </div>
+
+        <div class="mt-4">
+            <a href="@Url.Action("Edit", "Book", new { id = Model.Id })" class="btn custom-btn">
+                <i class="bi bi-pencil"></i> Edit
+            </a>
+            <a href="@Url.Action("List", "Book")" class="btn custom-btn-secondary ms-2">
+                <i class="bi bi-arrow-left"></i> Back to List
+            </a>
+        </div>
+    </div>
+</div>

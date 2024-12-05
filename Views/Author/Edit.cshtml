@@ -1,0 +1,32 @@
+@model AuthorViewModel
+
+<div class="container mt-4">
+    <div class="form-container">
+        <h2>Edit Author</h2>
+        
+        <form asp-action="Edit" method="post">
+            <input type="hidden" asp-for="Id" />
+            
+            <div class="mb-3">
+                <label asp-for="FirstName" class="form-label">First Name</label>
+                <input asp-for="FirstName" class="form-control custom-input" />
+                <span asp-validation-for="FirstName" class="text-danger"></span>
+            </div>
+
+            <div class="mb-3">
+                <label asp-for="LastName" class="form-label">Last Name</label>
+                <input asp-for="LastName" class="form-control custom-input" />
+                <span asp-validation-for="LastName" class="text-danger"></span>
+            </div>
+
+            <div class="mb-3">
+                <label asp-for="DateOfBirth" class="form-label">Date of Birth</label>
+                <input asp-for="DateOfBirth" type="date" class="form-control custom-input" />
+                <span asp-validation-for="DateOfBirth" class="text-danger"></span>
+            </div>
+
+            <button type="submit" class="btn custom-btn">Save Changes</button>
+            <a href="@Url.Action("List", "Author")" class="btn custom-btn-secondary">Cancel</a>
+        </form>
+    </div>
+</div>

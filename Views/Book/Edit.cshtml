@@ -1,0 +1,16 @@
+@model BookViewModel
+
+<div class="container mt-4">
+    <div class="form-container">
+        <h2>Edit Book</h2>
+        
+        <form asp-action="Edit" method="post">
+            <input type="hidden" asp-for="Id" />
+            
+            <partial name="_BookForm" model="Model" />
+            
+            <button type="submit" class="btn custom-btn">Save Changes</button>
+            <a href="@Url.Action("List", "Book")" class="btn custom-btn-secondary">Cancel</a>
+        </form>
+    </div>
+</div>

@@ -1,0 +1,14 @@
+@model BookViewModel
+
+<div class="container mt-4">
+    <div class="form-container">
+        <h2>Add New Book</h2>
+        
+        <form asp-action="Create" method="post">
+            <partial name="_BookForm" model="Model" />
+            
+            <button type="submit" class="btn custom-btn">Create Book</button>
+            <a href="@Url.Action("List", "Book")" class="btn custom-btn-secondary">Back to List</a>
+        </form>
+    </div>
+</div>

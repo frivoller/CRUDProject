@@ -1,0 +1,38 @@
+@model AuthorViewModel
+
+<div class="container mt-4">
+    <div class="details-container">
+        <h2 class="mb-4">Author Details</h2>
+        
+        <div class="row">
+            <div class="col-md-8">
+                <dl class="row">
+                    <dt class="col-sm-3">Full Name</dt>
+                    <dd class="col-sm-9">@Model.FullName</dd>
+
+                    <dt class="col-sm-3">Date of Birth</dt>
+                    <dd class="col-sm-9">@Model.DateOfBirth.ToString("MMMM dd, yyyy")</dd>
+
+                    <dt class="col-sm-3">Books Written</dt>
+                    <dd class="col-sm-9">
+                        <ul class="list-unstyled">
+                            @foreach (var book in Model.BooksWritten)
+                            {
+                                <li>@book</li>
+                            }
+                        </ul>
+                    </dd>
+                </dl>
+            </div>
+        </div>
+
+        <div class="mt-4">
+            <a href="@Url.Action("Edit", "Author", new { id = Model.Id })" class="btn custom-btn">
+                <i class="bi bi-pencil"></i> Edit
+            </a>
+            <a href="@Url.Action("List", "Author")" class="btn custom-btn-secondary ms-2">
+                <i class="bi bi-arrow-left"></i> Back to List
+            </a>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,29 @@
+﻿@model IEnumerable<BookViewModel>
+
+<h1>Books List</h1>
+
+<table class="table table-striped">
+    <thead>
+        <tr>
+            <th>Title</th>
+            <th>Author</th>
+            <th>Genre</th>
+            <th>Publish Date</th>
+            <th>ISBN</th>
+            <th>Copies Available</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var book in Model)
+        {
+            <tr>
+                <td>@book.Title</td>
+                <td>@book.AuthorFullName</td>
+                <td>@book.Genre</td>
+                <td>@book.PublishDate.ToString("MMMM dd, yyyy")</td>
+                <td>@book.ISBN</td>
+                <td>@book.CopiesAvailable</td>
+            </tr>
+        }
+    </tbody>
+</table>
