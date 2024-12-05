@@ -21,14 +21,23 @@ A simple CRUD application developed for book and author management.
 ## 🏗 Project Structure
 
 CRUDProject/
+
 ├── Controllers/ # MVC Controllers
+
 ├── Models/ # Data models and ViewModels
+
 ├── Views/ # Razor views
+
 │ ├── Author/ # Author operations views
+
 │ ├── Book/ # Book operations views
+
 │ ├── Home/ # Home page views
+
 │ └── Shared/ # Shared layout and partial views
+
 ├── wwwroot/ # Static files (CSS, JS, images)
+
 └── Data/ # In-memory database operations
 
 ## 📝 Usage
